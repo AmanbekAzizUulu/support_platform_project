@@ -1,6 +1,7 @@
 import json
 import random
-
+from chatterbox import Chatterbox
+ 
 class SupportPlatform:
     def __init__(self):
         self.operators = []
@@ -19,7 +20,7 @@ class SupportPlatform:
             return None
         operator = random.choice(available_ops)
         operator.active_chats += 1
-        from chatterbox import Chatterbox
+        
         chat = Chatterbox(user, operator)
         self.chats.append(chat)
         return chat
